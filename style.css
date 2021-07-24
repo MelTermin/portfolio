@@ -140,6 +140,9 @@ span {
   #77a1c1;
 }
 
+h2 {
+  margin-bottom: 20px;
+}
 .box{
   display:inline-block;
   flex-direction: row;
@@ -356,5 +359,4 @@ text-align: center;
     background-color: aqua;
   }
 }
-
 
