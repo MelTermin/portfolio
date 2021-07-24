@@ -37,7 +37,7 @@ const projectDetails = [
     id: 6,
     name: 'Music PlayList in Javascript',
     image: './Pictures/Playlist.png',
-    atag:'https://github.com/MelTermin/stockexchange-js'
+    atag:'https://suspicious-shirley-294fbe.netlify.app/'
   },
   ];
 
