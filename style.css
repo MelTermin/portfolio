@@ -140,18 +140,15 @@ span {
   #77a1c1;
 }
 
-h2 {
-  margin-bottom: 20px;
-}
 .box{
   display:inline-block;
   flex-direction: row;
   justify-content: space-between;
-	width:290px;
+	width:450px;
 	box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
 	border-radius: 10px;
 	overflow: hidden;
-  margin-right: 30px;
+ margin:20px 10px;
  
 }
 
@@ -163,6 +160,9 @@ h2 {
 
 }
 
+h2 {
+  margin-bottom: 20px;
+}
 
 .detail-box{
 	width: 100%;
@@ -171,7 +171,6 @@ h2 {
 	justify-content: space-between;
 	align-items: center;
 	padding: 10px 20px;
-
 	box-sizing: border-box;
 	
 }
@@ -359,4 +358,5 @@ text-align: center;
     background-color: aqua;
   }
 }
+
 
