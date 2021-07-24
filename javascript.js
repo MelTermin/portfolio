@@ -30,7 +30,7 @@ const projectDetails = [
     id: 5,
     name: 'Todo-List in Javascript',
     image: './Pictures/Todo-Javascript.png',
-    atag:'https://github.com/MelTermin/stockexchange-js'
+    atag:'https://youthful-yonath-910d43.netlify.app/'
   },
 
   {
