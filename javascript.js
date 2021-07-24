@@ -23,7 +23,7 @@ const projectDetails = [
     id: 4,
     name: 'Coloring Game in Javascript',
     image: './Pictures/Coloring-game.png',
-    atag:'https://github.com/MelTermin/stockexchange-js'
+    atag:'https://relaxed-bose-802727.netlify.app/'
   },
 
   {
