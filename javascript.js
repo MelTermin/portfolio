@@ -5,55 +5,96 @@ const projectDetails = [
     id: 1,
     name: 'Todo list in React',
     image: './Pictures/Todo-react.png',
-    atag:'https://meltermin-todoapp.netlify.app/'
+    atag:'https://meltermin-todoapp.netlify.app/',
+    category:"react"
   },
   {
     id: 2,
     name: 'Twitter Blog in React',
     image: './Pictures/Twitter-blog.png',
-    atag:'https://twitter-blog-react.herokuapp.com/'
+    atag:'https://twitter-blog-react.herokuapp.com/',
+    category:"react",
   },
   {
     id: 3,
     name: 'Stock Exhange in Javascript',
     image: './Pictures/StockExchangejs.png',
-    atag:'https://github.com/MelTermin/stockexchange-js'
+    atag:'https://github.com/MelTermin/stockexchange-js',
+    category:"javascript"
   },
   {
     id: 4,
     name: 'Coloring Game in Javascript',
     image: './Pictures/Coloring-game.png',
-    atag:'https://relaxed-bose-802727.netlify.app/'
+    atag:'https://relaxed-bose-802727.netlify.app/',
+    category:"javascript"
   },
 
   {
     id: 5,
     name: 'Todo-List in Javascript',
     image: './Pictures/Todo-Javascript.png',
-    atag:'https://youthful-yonath-910d43.netlify.app/'
+    atag:'https://youthful-yonath-910d43.netlify.app/',
+    category:"javascript"
   },
 
   {
     id: 6,
     name: 'Music PlayList in Javascript',
     image: './Pictures/Playlist.png',
-    atag:'https://suspicious-shirley-294fbe.netlify.app/'
+    atag:'https://suspicious-shirley-294fbe.netlify.app/',
+    category:"javascript"
   },
   ];
+
+  const buttonsDetails= ["All", "React", "Javascript"]
+  
 
 const projectSection=document.getElementById("projects");
 console.log(projectSection)
 
+
+
+// for (let i=0; i<buttonsDetails.length; i++) {
+
+
+// const buttons=document.createElement("button")
+// buttons.classList.add("filter-buttons")
+// buttons.innerHTML=buttonsDetails[i]
+
+
+
+// projectSection.append(buttons)
+
+// console.log(buttons)
+
+// buttons.addEventListener("click", clickHandler)
+
+// function clickHandler () {
+//   console.log(buttonsDetails[i])
+// }
+// }
+
+
+
+
+
 for (let i=0; i<projectDetails.length; i++) {
-  console.log(projectDetails[i])
+  // console.log(projectDetails[i])
 
   const boxDiv=document.createElement("div")
-  boxDiv.classList.add("box")
+  boxDiv.classList.add("box");
+  
+
 
   const imageDiv=document.createElement("div")
   imageDiv.classList.add("slide-img")
   const projectPic=document.createElement("img")
   projectPic.src=projectDetails[i]["image"];
+  projectPic.setAttribute("data-filter",  projectDetails[i]["category"])
+
+
+
 
   const detailBox=document.createElement("div")
   detailBox.classList.add("detail-box");
@@ -72,7 +113,10 @@ for (let i=0; i<projectDetails.length; i++) {
   detailBox.append(title,link)
  
   projectSection.append(boxDiv)
-
+  
+ 
+  
+  
 }
 
 
