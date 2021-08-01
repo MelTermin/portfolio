@@ -55,70 +55,84 @@ console.log(projectSection)
 
 
 
-// for (let i=0; i<buttonsDetails.length; i++) {
-
-
-// const buttons=document.createElement("button")
-// buttons.classList.add("filter-buttons")
-// buttons.innerHTML=buttonsDetails[i]
 
 
 
-// projectSection.append(buttons)
-
-// console.log(buttons)
-
-// buttons.addEventListener("click", clickHandler)
-
-// function clickHandler () {
-//   console.log(buttonsDetails[i])
-// }
-// }
+// filter part//
 
 
 
 
-
-for (let i=0; i<projectDetails.length; i++) {
-  // console.log(projectDetails[i])
-
-  const boxDiv=document.createElement("div")
-  boxDiv.classList.add("box");
-  
-
-
-  const imageDiv=document.createElement("div")
-  imageDiv.classList.add("slide-img")
-  const projectPic=document.createElement("img")
-  projectPic.src=projectDetails[i]["image"];
-  projectPic.setAttribute("data-filter",  projectDetails[i]["category"])
-
-
-
-
-  const detailBox=document.createElement("div")
-  detailBox.classList.add("detail-box");
-  const title=document.createElement("p");
-  title.innerHTML=projectDetails[i]["name"];
-
-  const link=document.createElement("a");
-  link.classList.add("btn-project");
-  link.href=projectDetails[i]["atag"];
-  link.target="_blank";
-  link.innerHTML="Click here to view"
-
-  boxDiv.append(imageDiv);
-  imageDiv.append(projectPic)
-  boxDiv.append(detailBox)
-  detailBox.append(title,link)
+  const filterArea= document.getElementById("filter-area")
+  console.log(filterArea)
  
-  projectSection.append(boxDiv)
-  
- 
-  
-  
-}
+  filterArea.addEventListener("keyup", filterProjects);
 
+  function filterProjects () {
+    let filterValues= filterArea.value.toLowerCase()
+    console.log(filterValues)
+    let data=searchProjects (filterValues,projectDetails)
+    ShowProjects(data)
+  }
+
+  function searchProjects (filterValues,data) {
+    let filteredProjects= [];
+    for(let i=0; i<data.length; i++) {
+    let projectName= data[i].name.toLowerCase()
+    if (projectName.includes(filterValues)) {
+      filteredProjects.push(data[i])
+    console.log(filteredProjects)
+    }
+    }
+
+    return filteredProjects
+  }
+
+  ShowProjects(projectDetails)
+
+  function ShowProjects  (data) {
+    projectSection.innerHTML=""
+    
+    for (let i=0; i<data.length; i++) {
+      // console.log(projectDetails[i])
+    
+      const boxDiv=document.createElement("div")
+      boxDiv.classList.add("box");
+      
+    
+    
+      const imageDiv=document.createElement("div")
+      imageDiv.classList.add("slide-img")
+      const projectPic=document.createElement("img")
+      projectPic.src=data[i]["image"];
+      projectPic.setAttribute("data-filter",  projectDetails[i]["category"])
+    
+    
+    
+    
+      const detailBox=document.createElement("div")
+      detailBox.classList.add("detail-box");
+      const title=document.createElement("p");
+      title.innerHTML=data[i]["name"];
+    
+      const link=document.createElement("a");
+      link.classList.add("btn-project");
+      link.href=data[i]["atag"];
+      link.target="_blank";
+      link.innerHTML="Click here to view"
+    
+      boxDiv.append(imageDiv);
+      imageDiv.append(projectPic)
+      boxDiv.append(detailBox)
+      detailBox.append(title,link)
+     
+      projectSection.append(boxDiv)
+      
+     
+      
+      
+    }
+    }
 
 //Education part//
 
